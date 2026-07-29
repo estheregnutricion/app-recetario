@@ -104,7 +104,40 @@
     </style>
 </head>
 <body class="text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+    
+<!-- MODAL DE CONTRASEÑA -->
+<div id="passwordModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center z-50">
+  <div class="bg-white p-6 rounded-2xl shadow-xl w-full max-w-sm space-y-4 border border-slate-200">
 
+    <h2 class="text-xl font-bold text-slate-800 text-center">Acceso restringido</h2>
+    <p class="text-sm text-slate-600 text-center">
+      Introduce la contraseña para acceder al recetario.
+    </p>
+
+    <form onsubmit="checkPassword(event)" class="space-y-3">
+      <input 
+        id="passwordInput"
+        type="password"
+        placeholder="Contraseña"
+        class="w-full px-4 py-2 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:outline-none"
+      >
+
+      <button 
+        type="submit"
+        class="w-full py-2.5 rounded-xl bg-brand-700 hover:bg-brand-800 text-white font-semibold transition-all">
+        Entrar
+      </button>
+    </form>
+
+    <p id="passwordError" class="hidden text-center text-sm text-rose-600 font-semibold">
+      ❌ Contraseña incorrecta
+    </p>
+
+  </div>
+</div>
+
+<!-- CONTENIDO DE LA APP (SE OCULTA HASTA DESBLOQUEAR) -->
+<div id="appContent" class="hidden"> 
     <header class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-brand-light shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -5748,6 +5781,24 @@
                 ingContainer.appendChild(li);
             });
         }
+            // FUNCIÓN DE CONTRASEÑA
+            function checkPassword(event) {
+              event.preventDefault();
+            
+              const input = document.getElementById("passwordInput");
+              const modal = document.getElementById("passwordModal");
+              const content = document.getElementById("appContent");
+              const error = document.getElementById("passwordError");
+            
+              if (input.value === "verano2026") {
+                modal.style.display = "none";
+                content.classList.remove("hidden");
+              } else {
+                error.classList.remove("hidden");
+                setTimeout(() => error.classList.add("hidden"), 2000);
+              }
+            }
     </script>
+                        
 </body>
 </html>
