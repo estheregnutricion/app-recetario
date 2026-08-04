@@ -246,10 +246,14 @@
                 <div class="flex items-center gap-2 flex-wrap text-xs pt-1">
                     <span class="text-slate-400 font-semibold text-[11px] uppercase tracking-wider mr-1">Filtro rápido:</span>
                     <button onclick="filterTag('all')" class="tag-btn active-tag px-2.5 py-1 rounded-lg bg-brand-light/60 text-brand-dark font-medium border border-brand-secondary/40 hover:bg-brand-light transition-all">Todos los tipos</button>
-                    <button onclick="filterTag('Alta Proteína')" class="tag-btn px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-medium border border-slate-200 hover:bg-slate-200 transition-all">💪 Alta Proteína</button>
-                    <button onclick="filterTag('Vegetariano')" class="tag-btn px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-medium border border-slate-200 hover:bg-slate-200 transition-all">🌱 Vegetariano</button>
-                    <button onclick="filterTag('Sin Gluten')" class="tag-btn px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-medium border border-slate-200 hover:bg-slate-200 transition-all">🌾 Sin Gluten</button>
-                    <button onclick="filterTag('Rápido (<15m)')" class="tag-btn px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-medium border border-slate-200 hover:bg-slate-200 transition-all">⚡ Rápido (<15m)</button>
+                    <button onclick="filterTag('Legumbres')" class="tag-btn px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-medium border border-slate-200 hover:bg-slate-200 transition-all">🫘 Legumbres</button>
+                    <button onclick="filterTag('Carnes')" class="tag-btn px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-medium border border-slate-200 hover:bg-slate-200 transition-all">🍗 Carnes</button>
+                    <button onclick="filterTag('Pescados')" class="tag-btn px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-medium border border-slate-200 hover:bg-slate-200 transition-all">🐟 Pescados</button>
+                    <button onclick="filterTag('Huevos')" class="tag-btn px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-medium border border-slate-200 hover:bg-slate-200 transition-all">🥚 Huevos</button>
+                    <button onclick="filterTag('Arroces y Pastas')" class="tag-btn px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-medium border border-slate-200 hover:bg-slate-200 transition-all">🍚 Arroces y Pastas</button>
+                    <button onclick="filterTag('Especiales')" class="tag-btn px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-medium border border-slate-200 hover:bg-slate-200 transition-all">✨ Especiales</button>
+                    <button onclick="filterTag('Verduras y Acompañamientos')" class="tag-btn px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-medium border border-slate-200 hover:bg-slate-200 transition-all">🥦 Verduras y Acompañamientos</button>
+                    <button onclick="filterTag('Rápido (<15min)')" class="tag-btn px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-medium border border-slate-200 hover:bg-slate-200 transition-all">⚡ Rápido (<15min)</button>
                 </div>
             </div>
 
@@ -414,6 +418,7 @@
     </footer>
 
     <script>
+
         const recipes = [
             {
                         "id": 1,
@@ -424,7 +429,7 @@
                         "difficulty": "Muy Fácil",
                         "tags": [
                                     "Vegetariano",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)"
                         ],
                         "baseServings": 1,
                         "kcal": 420,
@@ -476,7 +481,8 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Huevos"
                         ],
                         "baseServings": 1,
                         "kcal": 380,
@@ -580,8 +586,9 @@
                         "difficulty": "Muy Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Rápido (<15m)",
-                                    "Sin Gluten"
+                                    "Rápido (<15min)",
+                                    "Sin Gluten",
+                                    "Huevos"
                         ],
                         "baseServings": 1,
                         "kcal": 250,
@@ -634,14 +641,15 @@
                         "tags": [
                                     "Vegetariano",
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Huevos"
                         ],
                         "baseServings": 1,
                         "kcal": 330,
                         "protein": 21,
                         "carbs": 8,
                         "fat": 24,
-                        "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/h7OB1Q1.jpeg",
                         "notes": "Los champiñones aportan selenio y vitamina D soluble.",
                         "ingredients": [
                                     {
@@ -687,7 +695,7 @@
                         "tags": [
                                     "Vegetariano",
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)"
                         ],
                         "baseServings": 1,
                         "kcal": 310,
@@ -738,7 +746,7 @@
                         "difficulty": "Muy Fácil",
                         "tags": [
                                     "Vegetariano",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)"
                         ],
                         "baseServings": 1,
                         "kcal": 340,
@@ -842,14 +850,16 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Pescados",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 540,
                         "protein": 38,
                         "carbs": 42,
                         "fat": 22,
-                        "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/iKjMVFm.png",
                         "notes": "El aguacate y el salmón aportan saciedad prolongada y cuidan la salud cardiovascular.",
                         "ingredients": [
                                     {
@@ -894,14 +904,16 @@
                         "difficulty": "Media",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Carnes",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 510,
                         "protein": 42,
                         "carbs": 50,
                         "fat": 14,
-                        "image": "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/9EHxXfr.png",
                         "notes": "La cúrcuma del curry tiene propiedades antiinflamatorias comprobadas.",
                         "ingredients": [
                                     {
@@ -947,7 +959,8 @@
                         "difficulty": "Media",
                         "tags": [
                                     "Vegetariano",
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Legumbres"
                         ],
                         "baseServings": 1,
                         "kcal": 480,
@@ -999,7 +1012,8 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Carnes"
                         ],
                         "baseServings": 1,
                         "kcal": 460,
@@ -1051,14 +1065,16 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Carnes",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 490,
                         "protein": 44,
                         "carbs": 40,
                         "fat": 15,
-                        "image": "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/Ls8UZeg.png",
                         "notes": "Rico en fósforo y vitaminas del grupo B.",
                         "ingredients": [
                                     {
@@ -1102,14 +1118,15 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Vegetariano",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Legumbres"
                         ],
                         "baseServings": 1,
                         "kcal": 430,
                         "protein": 22,
                         "carbs": 54,
                         "fat": 13,
-                        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/YTWEuEQ.png",
                         "notes": "El tofu firme es una fuente vegetal completa de calcio y hierro.",
                         "ingredients": [
                                     {
@@ -1154,7 +1171,9 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Pescados",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 520,
@@ -1207,7 +1226,8 @@
                         "tags": [
                                     "Alta Proteína",
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Pescados"
                         ],
                         "baseServings": 1,
                         "kcal": 470,
@@ -1259,7 +1279,8 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Pescados"
                         ],
                         "baseServings": 1,
                         "kcal": 440,
@@ -1311,7 +1332,8 @@
                         "difficulty": "Media",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Carnes"
                         ],
                         "baseServings": 1,
                         "kcal": 420,
@@ -1363,7 +1385,8 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Vegetariano",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Verduras y Acompañamientos"
                         ],
                         "baseServings": 1,
                         "kcal": 410,
@@ -1415,7 +1438,8 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Vegetariano",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Verduras y Acompañamientos"
                         ],
                         "baseServings": 1,
                         "kcal": 320,
@@ -1423,7 +1447,7 @@
                         "carbs": 38,
                         "fat": 10,
                         "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop&q=80",
-                        "notes": "Receta elaborada para un lote familiar/batch cooking. Nota: estas cantidades de ingredientes elaboran un lote de aproximadamente 4 platos.",
+                        "notes": "Receta elaborada para un lote familiar/batch cooking. Nota: estas cantidades de ingredientes elaboran un lote de aproximadamente 4 platos; los macros mostrados son el aporte aproximado por plato (total de la receta dividido entre 4).",
                         "ingredients": [
                                     {
                                                 "qty": 800,
@@ -1469,7 +1493,8 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Carnes"
                         ],
                         "baseServings": 1,
                         "kcal": 460,
@@ -1522,7 +1547,8 @@
                         "tags": [
                                     "Alta Proteína",
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Pescados"
                         ],
                         "baseServings": 1,
                         "kcal": 330,
@@ -1574,7 +1600,8 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Vegetariano",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Verduras y Acompañamientos"
                         ],
                         "baseServings": 1,
                         "kcal": 260,
@@ -1582,7 +1609,7 @@
                         "carbs": 34,
                         "fat": 9,
                         "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop&q=80",
-                        "notes": "La avena triturada le aporta cremosidad sin utilizar natas ni lácteos. Nota: estas cantidades de ingredientes elaboran un lote de aproximadamente 4 platos.",
+                        "notes": "La avena triturada le aporta cremosidad sin utilizar natas ni lácteos. Nota: estas cantidades de ingredientes elaboran un lote de aproximadamente 4 platos; los macros mostrados son el aporte aproximado por plato (total de la receta dividido entre 4).",
                         "ingredients": [
                                     {
                                                 "qty": 400,
@@ -1627,8 +1654,9 @@
                         "difficulty": "Muy Fácil",
                         "tags": [
                                     "Vegetariano",
-                                    "Rápido (<15m)",
-                                    "Sin Gluten"
+                                    "Rápido (<15min)",
+                                    "Sin Gluten",
+                                    "Verduras y Acompañamientos"
                         ],
                         "baseServings": 1,
                         "kcal": 380,
@@ -1680,8 +1708,9 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Rápido (<15m)",
-                                    "Sin Gluten"
+                                    "Rápido (<15min)",
+                                    "Sin Gluten",
+                                    "Carnes"
                         ],
                         "baseServings": 1,
                         "kcal": 350,
@@ -1734,7 +1763,7 @@
                         "tags": [
                                     "Vegetariano",
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)"
                         ],
                         "baseServings": 1,
                         "kcal": 220,
@@ -1781,7 +1810,7 @@
                         "tags": [
                                     "Vegetariano",
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)"
                         ],
                         "baseServings": 1,
                         "kcal": 290,
@@ -1828,7 +1857,7 @@
                         "tags": [
                                     "Alta Proteína",
                                     "Vegetariano",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)"
                         ],
                         "baseServings": 1,
                         "kcal": 260,
@@ -1875,7 +1904,7 @@
                         "tags": [
                                     "Vegetariano",
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)"
                         ],
                         "baseServings": 1,
                         "kcal": 240,
@@ -1921,7 +1950,7 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Vegetariano",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)"
                         ],
                         "baseServings": 1,
                         "kcal": 210,
@@ -1969,7 +1998,7 @@
                                     "Alta Proteína",
                                     "Vegetariano",
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)"
                         ],
                         "baseServings": 1,
                         "kcal": 190,
@@ -2010,7 +2039,7 @@
                         "difficulty": "Muy Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Rápido (<15m)",
+                                    "Rápido (<15min)",
                                     "Vegetariano"
                         ],
                         "baseServings": 1,
@@ -2063,14 +2092,15 @@
                         "tags": [
                                     "Sin Gluten",
                                     "Vegetariano",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Legumbres"
                         ],
                         "baseServings": 1,
                         "kcal": 450,
                         "protein": 18,
                         "carbs": 42,
                         "fat": 22,
-                        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80",
+                        "image": "https://i.imgur.com/EGzMCmV.png",
                         "notes": "Excelente opción para batch cooking o llevar en tupper al trabajo. Alta en fibra soluble y grasas cardioprotectoras.",
                         "ingredients": [
                                     {
@@ -2120,15 +2150,16 @@
                         "tags": [
                                     "Sin Gluten",
                                     "Vegetariano",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Verduras y Acompañamientos"
                         ],
                         "baseServings": 1,
                         "kcal": 160,
                         "protein": 4,
                         "carbs": 22,
                         "fat": 7,
-                        "image": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80",
-                        "notes": "Entrante reconfortante y saciante bajo en calorías, ideal para incorporar verduras y micronutrientes en la cena. Nota: estas cantidades de ingredientes elaboran un lote de aproximadamente 4 platos.",
+                        "image": "https://i.imgur.com/q3lGPnR.jpeg",
+                        "notes": "Entrante reconfortante y saciante bajo en calorías, ideal para incorporar verduras y micronutrientes en la cena. Nota: estas cantidades de ingredientes elaboran un lote de aproximadamente 4 platos; los macros mostrados son el aporte aproximado por plato (total de la receta dividido entre 4).",
                         "ingredients": [
                                     {
                                                 "qty": 4,
@@ -2173,15 +2204,16 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Sin Gluten",
-                                    "Vegetariano"
+                                    "Vegetariano",
+                                    "Verduras y Acompañamientos"
                         ],
                         "baseServings": 1,
                         "kcal": 180,
                         "protein": 4,
                         "carbs": 26,
                         "fat": 8,
-                        "image": "https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?auto=format&fit=crop&w=600&q=80",
-                        "notes": "El jengibre le otorga un toque antiinflamatorio y digestivo único. Nota: estas cantidades de ingredientes elaboran un lote de aproximadamente 4 platos;.",
+                        "image": "https://i.imgur.com/Xvsv0Dr.jpeg",
+                        "notes": "El jengibre le otorga un toque antiinflamatorio y digestivo único. Nota: estas cantidades de ingredientes elaboran un lote de aproximadamente 4 platos; los macros mostrados son el aporte aproximado por plato (total de la receta dividido entre 4).",
                         "ingredients": [
                                     {
                                                 "qty": 1200,
@@ -2227,15 +2259,16 @@
                         "tags": [
                                     "Alta Proteína",
                                     "Sin Gluten",
-                                    "Vegetariano"
+                                    "Vegetariano",
+                                    "Legumbres"
                         ],
                         "baseServings": 1,
                         "kcal": 390,
                         "protein": 22,
                         "carbs": 48,
                         "fat": 12,
-                        "image": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80",
-                        "notes": "Receta muy completa que combina legumbre y proteína vegetal/animal. Aporta nitratos naturales para la salud cardiovascular. Nota: estas cantidades de ingredientes elaboran un lote de aproximadamente 4 platos;.",
+                        "image": "https://i.imgur.com/xHluxuh.png",
+                        "notes": "Receta muy completa que combina legumbre y proteína vegetal/animal. Aporta nitratos naturales para la salud cardiovascular. Nota: estas cantidades de ingredientes elaboran un lote de aproximadamente 4 platos; los macros mostrados son el aporte aproximado por plato (total de la receta dividido entre 4).",
                         "ingredients": [
                                     {
                                                 "qty": 8,
@@ -2295,14 +2328,15 @@
                         "difficulty": "Muy Fácil",
                         "tags": [
                                     "Vegetariano",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 320,
                         "protein": 8,
                         "carbs": 62,
                         "fat": 5,
-                        "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80",
+                        "image": "https://i.imgur.com/8jZPOJC.png",
                         "notes": "Sustituto rápido y diferente de la patata asada. Acompáñalo siempre con tu fuente proteica y verdura de preferencia.",
                         "ingredients": [
                                     {
@@ -2337,14 +2371,16 @@
                         "tags": [
                                     "Alta Proteína",
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Pescados",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 420,
                         "protein": 26,
                         "carbs": 44,
                         "fat": 15,
-                        "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80",
+                        "image": "https://i.imgur.com/abPPHIY.jpeg",
                         "notes": "Las sardinillas son una fuente excepcional de Omega-3 de bajo impacto en mercurio y calcio de alta disponibilidad.",
                         "ingredients": [
                                     {
@@ -2389,14 +2425,16 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Pescados",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 410,
                         "protein": 38,
                         "carbs": 45,
                         "fat": 8,
-                        "image": "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=600&q=80",
+                        "image": "https://i.imgur.com/l2l5nsH.jpeg",
                         "notes": "Receta ultra rápida para días con poco tiempo. Las crucíferas aportan sulforafano con gran poder antioxidante.",
                         "ingredients": [
                                     {
@@ -2436,14 +2474,16 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Carnes",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 460,
                         "protein": 40,
                         "carbs": 50,
                         "fat": 10,
-                        "image": "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/SZXqaPt.png",
                         "notes": "Plato muy completo que aporta proteínas magras, fibra de las verduras e hidratos de lenta asimilación.",
                         "ingredients": [
                                     {
@@ -2488,14 +2528,16 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Carnes",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 490,
                         "protein": 32,
                         "carbs": 52,
                         "fat": 16,
-                        "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/7WhCfLD.png",
                         "notes": "El cuscús se hace en apenas 5 minutos: cocínalo con el mismo volumen de agua caliente que de cuscús en crudo.",
                         "ingredients": [
                                     {
@@ -2545,7 +2587,9 @@
                         "difficulty": "Muy Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Pescados",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 430,
@@ -2601,14 +2645,16 @@
                         "prepTime": "35 min",
                         "difficulty": "Media",
                         "tags": [
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Carnes",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 420,
                         "protein": 34,
                         "carbs": 44,
                         "fat": 10,
-                        "image": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/8ozRucA.png",
                         "notes": "Se prepara mezclando caldo de cocido con agua para reducir el aporte de sal.",
                         "ingredients": [
                                     {
@@ -2657,14 +2703,16 @@
                         "prepTime": "20 min",
                         "difficulty": "Fácil",
                         "tags": [
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Carnes",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 510,
                         "protein": 34,
                         "carbs": 55,
                         "fat": 15,
-                        "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/blaxOy9.png",
                         "notes": "Usa pasta integral de calidad para un mejor perfil de fibra y saciedad.",
                         "ingredients": [
                                     {
@@ -2708,14 +2756,16 @@
                         "prepTime": "25 min",
                         "difficulty": "Fácil",
                         "tags": [
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Carnes",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 520,
                         "protein": 38,
                         "carbs": 54,
                         "fat": 14,
-                        "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/aQZbEZX.png",
                         "notes": "La berenjena pochada aporta textura cremosa sin necesidad de nata.",
                         "ingredients": [
                                     {
@@ -2764,14 +2814,16 @@
                         "prepTime": "30 min",
                         "difficulty": "Fácil",
                         "tags": [
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Carnes",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 530,
                         "protein": 32,
                         "carbs": 60,
                         "fat": 16,
-                        "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/ePHS4Vs.png",
                         "notes": "El tomate frito tipo casero (ej. HIDA) ya lleva aceite de oliva, así que no es necesario añadir más.",
                         "ingredients": [
                                     {
@@ -2822,14 +2874,16 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Legumbres",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 470,
                         "protein": 34,
                         "carbs": 50,
                         "fat": 13,
-                        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/5iu4CsZ.png",
                         "notes": "La pasta de lenteja roja aporta proteína extra al ser también legumbre, perfecta para combinar con tiras de pollo.",
                         "ingredients": [
                                     {
@@ -2880,14 +2934,16 @@
                         "tags": [
                                     "Alta Proteína",
                                     "Sin Gluten",
-                                    "Vegetariano"
+                                    "Vegetariano",
+                                    "Legumbres",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 460,
                         "protein": 26,
                         "carbs": 52,
                         "fat": 15,
-                        "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/OzbmIGb.jpeg",
                         "notes": "La pasta de lenteja roja cuenta como ración de legumbre y aporta proteína vegetal extra.",
                         "ingredients": [
                                     {
@@ -2931,14 +2987,16 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Legumbres",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 450,
                         "protein": 32,
                         "carbs": 48,
                         "fat": 12,
-                        "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/nYb3TBn.png",
                         "notes": "Receta con base de albahaca y aceite de oliva virgen extra, muy digestiva.",
                         "ingredients": [
                                     {
@@ -2983,14 +3041,16 @@
                         "tags": [
                                     "Alta Proteína",
                                     "Vegetariano",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Legumbres",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 480,
                         "protein": 30,
                         "carbs": 44,
                         "fat": 20,
-                        "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/gpoF8yg.png",
                         "notes": "Una ración de 40g de esta pasta de legumbre aporta unos 10g de proteína, por eso se acompaña de otro grupo proteico.",
                         "ingredients": [
                                     {
@@ -3037,14 +3097,16 @@
                         "tags": [
                                     "Vegetariano",
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Legumbres",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 460,
                         "protein": 26,
                         "carbs": 58,
                         "fat": 12,
-                        "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/Da1iUxs.png",
                         "notes": "Truco de batch cooking: prepara boloñesa de soja para varias raciones y aprovéchala también para rellenar berenjenas.",
                         "ingredients": [
                                     {
@@ -3089,14 +3151,15 @@
                         "difficulty": "Muy Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Pescados"
                         ],
                         "baseServings": 1,
                         "kcal": 440,
                         "protein": 32,
                         "carbs": 42,
                         "fat": 15,
-                        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/9cLHQIs.png",
                         "notes": "Si usas atún en lata, prioriza la versión al natural para poder aliñarlo tú con tu propio aceite de oliva.",
                         "ingredients": [
                                     {
@@ -3145,14 +3208,15 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Pescados"
                         ],
                         "baseServings": 1,
                         "kcal": 420,
                         "protein": 28,
                         "carbs": 32,
                         "fat": 20,
-                        "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/GvTSsMQ.png",
                         "notes": "Una manera diferente y apetecible de aumentar el consumo de pescado azul.",
                         "ingredients": [
                                     {
@@ -3197,14 +3261,15 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Pescados"
                         ],
                         "baseServings": 1,
                         "kcal": 380,
                         "protein": 32,
                         "carbs": 18,
                         "fat": 18,
-                        "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/5pjwjvA.png",
                         "notes": "Una manera ligera y original de comer coliflor, con toda la cremosidad de un puré sin necesidad de nata.",
                         "ingredients": [
                                     {
@@ -3249,14 +3314,15 @@
                         "difficulty": "Media",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Pescados"
                         ],
                         "baseServings": 1,
                         "kcal": 460,
                         "protein": 36,
                         "carbs": 22,
                         "fat": 22,
-                        "image": "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/j3N5Xgm.png",
                         "notes": "La salsa de curry se puede preparar con proteína en polvo neutra o con yogur/queso fresco batido.",
                         "ingredients": [
                                     {
@@ -3301,14 +3367,16 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Pescados",
+                                    "Arroces y Pastas"
                         ],
                         "baseServings": 1,
                         "kcal": 480,
                         "protein": 34,
                         "carbs": 14,
                         "fat": 30,
-                        "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/GSH0tBg.png",
                         "notes": "El salmón es un pescado graso, rico en Omega 3, ideal para acompañar de verduras ligeras.",
                         "ingredients": [
                                     {
@@ -3355,14 +3423,15 @@
                         "tags": [
                                     "Alta Proteína",
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Pescados"
                         ],
                         "baseServings": 1,
                         "kcal": 340,
                         "protein": 34,
                         "carbs": 16,
                         "fat": 12,
-                        "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/pZ0HIdq.png",
                         "notes": "Pescado blanco muy magro, ideal para cenas ligeras.",
                         "ingredients": [
                                     {
@@ -3402,14 +3471,15 @@
                         "tags": [
                                     "Alta Proteína",
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Pescados"
                         ],
                         "baseServings": 1,
                         "kcal": 380,
                         "protein": 28,
                         "carbs": 18,
                         "fat": 22,
-                        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/40eqsqP.png",
                         "notes": "Combinación agridulce entre el pescado azul y la fruta fresca, muy refrescante.",
                         "ingredients": [
                                     {
@@ -3459,7 +3529,8 @@
                         "tags": [
                                     "Alta Proteína",
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Pescados"
                         ],
                         "baseServings": 1,
                         "kcal": 420,
@@ -3510,14 +3581,15 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Pescados"
                         ],
                         "baseServings": 1,
                         "kcal": 440,
                         "protein": 28,
                         "carbs": 50,
                         "fat": 12,
-                        "image": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/uLZxYbN.png",
                         "notes": "Receta adaptada, ideal para aprovechar verduras variadas cortadas en tiras finas.",
                         "ingredients": [
                                     {
@@ -3562,7 +3634,8 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Pescados"
                         ],
                         "baseServings": 1,
                         "kcal": 320,
@@ -3613,14 +3686,15 @@
                         "prepTime": "25 min",
                         "difficulty": "Fácil",
                         "tags": [
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Carnes"
                         ],
                         "baseServings": 1,
                         "kcal": 470,
                         "protein": 38,
                         "carbs": 32,
                         "fat": 20,
-                        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/Q4escpj.png",
                         "notes": "Se puede preparar de forma exprés con patata de bote y tiras de pechuga ya cocinadas.",
                         "ingredients": [
                                     {
@@ -3665,14 +3739,15 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Carnes"
                         ],
                         "baseServings": 1,
                         "kcal": 460,
                         "protein": 40,
                         "carbs": 40,
                         "fat": 12,
-                        "image": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/AjTkCWX.jpeg",
                         "notes": "Puedes sustituir la pechuga por otras proteínas: merluza, salmón, tofu o revuelto de huevo.",
                         "ingredients": [
                                     {
@@ -3711,14 +3786,15 @@
                         "prepTime": "22 min",
                         "difficulty": "Fácil",
                         "tags": [
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Carnes"
                         ],
                         "baseServings": 1,
                         "kcal": 450,
                         "protein": 32,
                         "carbs": 38,
                         "fat": 18,
-                        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/navtTgE.png",
                         "notes": "Puedes cambiar la proteína por enlatados, caballa o tiras de pollo para tener más variantes de esta misma idea.",
                         "ingredients": [
                                     {
@@ -3764,14 +3840,15 @@
                         "tags": [
                                     "Alta Proteína",
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Carnes"
                         ],
                         "baseServings": 1,
                         "kcal": 380,
                         "protein": 32,
                         "carbs": 14,
                         "fat": 18,
-                        "image": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/fJhs9ht.png",
                         "notes": "Puedes acompañar con patata, boniato, tortitas de legumbre o pan integral según tu pauta.",
                         "ingredients": [
                                     {
@@ -3804,14 +3881,15 @@
                         "prepTime": "30 min",
                         "difficulty": "Fácil",
                         "tags": [
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Carnes"
                         ],
                         "baseServings": 1,
                         "kcal": 450,
                         "protein": 36,
                         "carbs": 32,
                         "fat": 18,
-                        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/ME08BAz.jpeg",
                         "notes": "Un plato colorido que combina la dulzura de la calabaza asada con la jugosidad del pollo al papillote.",
                         "ingredients": [
                                     {
@@ -3856,14 +3934,15 @@
                         "difficulty": "Media",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Carnes"
                         ],
                         "baseServings": 1,
                         "kcal": 480,
                         "protein": 40,
                         "carbs": 20,
                         "fat": 24,
-                        "image": "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/ZHe3VOQ.pngv",
                         "notes": "Para un toque a coco puedes usar yogur 100% coco o agua de coco en lugar de agua.",
                         "ingredients": [
                                     {
@@ -3909,14 +3988,15 @@
                         "prepTime": "20 min",
                         "difficulty": "Fácil",
                         "tags": [
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Carnes"
                         ],
                         "baseServings": 1,
                         "kcal": 400,
                         "protein": 32,
                         "carbs": 22,
                         "fat": 18,
-                        "image": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/NRex3Xt.jpeg",
                         "notes": "Receta pensada para el día a día usando blister de tiras de pollo ya cocinadas.",
                         "ingredients": [
                                     {
@@ -3956,14 +4036,15 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Carnes"
                         ],
                         "baseServings": 1,
                         "kcal": 430,
                         "protein": 32,
                         "carbs": 20,
                         "fat": 22,
-                        "image": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/AOWbLKH.jpeg",
                         "notes": "Clásico reconfortante adaptado con menos grasa y más verdura.",
                         "ingredients": [
                                     {
@@ -4008,14 +4089,15 @@
                         "difficulty": "Media",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Carnes"
                         ],
                         "baseServings": 1,
                         "kcal": 470,
                         "protein": 32,
                         "carbs": 38,
                         "fat": 16,
-                        "image": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/5RFqhpJ.png",
                         "notes": "Puedes acompañar con 1-2 fajitas de maíz cortadas en triángulos para aumentar el hidrato.",
                         "ingredients": [
                                     {
@@ -4061,14 +4143,15 @@
                         "difficulty": "Media",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Carnes"
                         ],
                         "baseServings": 1,
                         "kcal": 480,
                         "protein": 34,
                         "carbs": 42,
                         "fat": 18,
-                        "image": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/fwshrhv.jpeg",
                         "notes": "El boniato aporta hidratos de bajo índice glucémico frente a la patata tradicional.",
                         "ingredients": [
                                     {
@@ -4109,14 +4192,15 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Carnes"
                         ],
                         "baseServings": 1,
                         "kcal": 440,
                         "protein": 34,
                         "carbs": 38,
                         "fat": 14,
-                        "image": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/BL2GxdY.jpeg",
                         "notes": "Se puede gratinar unos minutos al horno con queso rallado por encima de forma opcional.",
                         "ingredients": [
                                     {
@@ -4161,14 +4245,15 @@
                         "prepTime": "20 min",
                         "difficulty": "Fácil",
                         "tags": [
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Especiales"
                         ],
                         "baseServings": 1,
                         "kcal": 440,
                         "protein": 28,
                         "carbs": 34,
                         "fat": 20,
-                        "image": "https://images.unsplash.com/photo-1520072959219-c595dc870360?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/LKtHRbh.png",
                         "notes": "Usa aceite de oliva en spray y controla las raciones de queso y salsa para mantener el equilibrio nutricional.",
                         "ingredients": [
                                     {
@@ -4215,14 +4300,15 @@
                         "tags": [
                                     "Alta Proteína",
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Huevos"
                         ],
                         "baseServings": 1,
                         "kcal": 320,
                         "protein": 28,
                         "carbs": 10,
                         "fat": 18,
-                        "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/hBazFBL.jpeg",
                         "notes": "Puedes usar 2 huevos + 3 claras o 1 huevo + 5 claras según la proteína que necesites.",
                         "ingredients": [
                                     {
@@ -4269,14 +4355,15 @@
                         "tags": [
                                     "Alta Proteína",
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Huevos"
                         ],
                         "baseServings": 1,
                         "kcal": 330,
                         "protein": 30,
                         "carbs": 8,
                         "fat": 20,
-                        "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/xkBi0mL.png",
                         "notes": "También puedes acompañarla de un carpaccio de tomate y rodajas de queso mozzarella con albahaca.",
                         "ingredients": [
                                     {
@@ -4316,7 +4403,8 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Huevos"
                         ],
                         "baseServings": 1,
                         "kcal": 380,
@@ -4368,14 +4456,15 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Huevos"
                         ],
                         "baseServings": 1,
                         "kcal": 370,
                         "protein": 26,
                         "carbs": 28,
                         "fat": 16,
-                        "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/qVatnWa.png",
                         "notes": "Acompaña con tomate partido y orégano o con una parrillada de pimientos y cebolla.",
                         "ingredients": [
                                     {
@@ -4420,14 +4509,15 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Huevos"
                         ],
                         "baseServings": 1,
                         "kcal": 340,
                         "protein": 30,
                         "carbs": 6,
                         "fat": 20,
-                        "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/5ZFs2ES.jpeg",
                         "notes": "Comprueba que el jamón cocido o la pechuga de pollo tenga más de un 90% de carne en sus ingredientes.",
                         "ingredients": [
                                     {
@@ -4467,14 +4557,15 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Vegetariano",
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Legumbres"
                         ],
                         "baseServings": 1,
                         "kcal": 460,
                         "protein": 28,
                         "carbs": 48,
                         "fat": 14,
-                        "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/ew2CTm3.png",
                         "notes": "Combina legumbre y proteína vegetal texturizada para un plato muy completo en fibra y proteína.",
                         "ingredients": [
                                     {
@@ -4521,14 +4612,15 @@
                         "tags": [
                                     "Vegetariano",
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Legumbres"
                         ],
                         "baseServings": 1,
                         "kcal": 420,
                         "protein": 24,
                         "carbs": 50,
                         "fat": 10,
-                        "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/pMcKlT5.png",
                         "notes": "Al emplatar puedes acompañarlo con huevo o con lomos de merluza o bacalao cocinados en la misma olla.",
                         "ingredients": [
                                     {
@@ -4574,14 +4666,15 @@
                         "difficulty": "Media",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Legumbres"
                         ],
                         "baseServings": 1,
                         "kcal": 520,
                         "protein": 42,
                         "carbs": 45,
                         "fat": 16,
-                        "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/RVoNtoU.png",
                         "notes": "Puedes usar la patata como acompañamiento del plato o reservarla para otra preparación.",
                         "ingredients": [
                                     {
@@ -4627,14 +4720,15 @@
                         "tags": [
                                     "Vegetariano",
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Legumbres"
                         ],
                         "baseServings": 1,
                         "kcal": 440,
                         "protein": 26,
                         "carbs": 44,
                         "fat": 16,
-                        "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/GKhE2B2.jpeg",
                         "notes": "Puedes preparar la mezcla de garbanzos con antelación y guardarla en la nevera para varios usos.",
                         "ingredients": [
                                     {
@@ -4679,14 +4773,15 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Vegetariano",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Legumbres"
                         ],
                         "baseServings": 1,
                         "kcal": 460,
                         "protein": 20,
                         "carbs": 46,
                         "fat": 20,
-                        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/jJmXfhx.png",
                         "notes": "Puedes acompañar con una latita de caballa, sardinillas o un huevo para completar la parte proteica.",
                         "ingredients": [
                                     {
@@ -4731,14 +4826,15 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Vegetariano",
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Legumbres"
                         ],
                         "baseServings": 1,
                         "kcal": 440,
                         "protein": 26,
                         "carbs": 42,
                         "fat": 18,
-                        "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/V6hdMYt.png",
                         "notes": "Puedes sustituir el huevo y el queso por un enlatado o tiras de pollo para variar la receta.",
                         "ingredients": [
                                     {
@@ -4783,14 +4879,15 @@
                         "tags": [
                                     "Alta Proteína",
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Legumbres"
                         ],
                         "baseServings": 1,
                         "kcal": 450,
                         "protein": 28,
                         "carbs": 42,
                         "fat": 20,
-                        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/Qup9Ubh.png",
                         "notes": "Receta muy sencilla ideal para preparar en pocos minutos y llevar de tupper.",
                         "ingredients": [
                                     {
@@ -4835,7 +4932,8 @@
                         "difficulty": "Muy Fácil",
                         "tags": [
                                     "Vegetariano",
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Legumbres"
                         ],
                         "baseServings": 1,
                         "kcal": 420,
@@ -4887,14 +4985,15 @@
                         "tags": [
                                     "Vegetariano",
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Legumbres"
                         ],
                         "baseServings": 1,
                         "kcal": 430,
                         "protein": 24,
                         "carbs": 40,
                         "fat": 16,
-                        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/gBPvrNl.jpeg",
                         "notes": "Puedes añadir un huevo duro o un enlatado para aumentar el aporte proteico si lo necesitas.",
                         "ingredients": [
                                     {
@@ -4937,14 +5036,15 @@
                         "prepTime": "25 min",
                         "difficulty": "Fácil",
                         "tags": [
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Legumbres"
                         ],
                         "baseServings": 1,
                         "kcal": 420,
                         "protein": 28,
                         "carbs": 32,
                         "fat": 18,
-                        "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/gcbJflM.png",
                         "notes": "Las habas son legumbre y aportan tanto proteína como hidrato; puedes acompañar con biscotes o patata cocida.",
                         "ingredients": [
                                     {
@@ -4989,14 +5089,15 @@
                         "difficulty": "Media",
                         "tags": [
                                     "Vegetariano",
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Legumbres"
                         ],
                         "baseServings": 1,
                         "kcal": 420,
                         "protein": 22,
                         "carbs": 38,
                         "fat": 16,
-                        "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/lEJMWet.png",
                         "notes": "Una alternativa a las típicas berenjenas rellenas de carne, sustituyendo la carne picada por garbanzos.",
                         "ingredients": [
                                     {
@@ -5041,14 +5142,15 @@
                         "difficulty": "Media",
                         "tags": [
                                     "Vegetariano",
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Legumbres"
                         ],
                         "baseServings": 1,
                         "kcal": 430,
                         "protein": 24,
                         "carbs": 36,
                         "fat": 16,
-                        "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/vaaUc2J.png",
                         "notes": "La soja texturizada aporta proteína vegetal y también cuenta como una ración de hidrato al ser legumbre.",
                         "ingredients": [
                                     {
@@ -5094,14 +5196,15 @@
                         "tags": [
                                     "Vegetariano",
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Legumbres"
                         ],
                         "baseServings": 1,
                         "kcal": 320,
                         "protein": 22,
                         "carbs": 8,
                         "fat": 20,
-                        "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/N0cF7kP.jpeg",
                         "notes": "El tofu firme es una excelente fuente vegetal de proteína, calcio y hierro.",
                         "ingredients": [
                                     {
@@ -5141,14 +5244,15 @@
                         "prepTime": "25 min",
                         "difficulty": "Fácil",
                         "tags": [
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Especiales"
                         ],
                         "baseServings": 1,
                         "kcal": 480,
                         "protein": 32,
                         "carbs": 34,
                         "fat": 22,
-                        "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/nkakaUR.png",
                         "notes": "Se puede hacer con múltiples combinaciones, por ejemplo con 2 huevos y una lata de atún en lugar de carne.",
                         "ingredients": [
                                     {
@@ -5192,14 +5296,15 @@
                         "prepTime": "25 min",
                         "difficulty": "Media",
                         "tags": [
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Especiales"
                         ],
                         "baseServings": 1,
                         "kcal": 460,
                         "protein": 30,
                         "carbs": 42,
                         "fat": 16,
-                        "image": "https://images.unsplash.com/photo-1520072959219-c595dc870360?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/KrLpnI7.jpeg",
                         "notes": "Al ser una capa fina de carne, se cocina muy rápido; ten cuidado de no pasarla de punto.",
                         "ingredients": [
                                     {
@@ -5238,14 +5343,15 @@
                         "prepTime": "20 min",
                         "difficulty": "Fácil",
                         "tags": [
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Especiales"
                         ],
                         "baseServings": 1,
                         "kcal": 470,
                         "protein": 34,
                         "carbs": 44,
                         "fat": 14,
-                        "image": "https://images.unsplash.com/photo-1520072959219-c595dc870360?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/eCmLetJ.jpeg",
                         "notes": "Se puede sustituir el pollo por carne picada según la preferencia.",
                         "ingredients": [
                                     {
@@ -5285,14 +5391,15 @@
                         "difficulty": "Muy Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)",
+                                    "Especiales"
                         ],
                         "baseServings": 1,
                         "kcal": 440,
                         "protein": 30,
                         "carbs": 40,
                         "fat": 16,
-                        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/NHnnGKC.png",
                         "notes": "Puedes cambiar la proteína por caballa con huevo duro o por tiras de pechuga de pollo.",
                         "ingredients": [
                                     {
@@ -5330,14 +5437,15 @@
                         "prepTime": "25 min",
                         "difficulty": "Fácil",
                         "tags": [
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Especiales"
                         ],
                         "baseServings": 1,
                         "kcal": 460,
                         "protein": 34,
                         "carbs": 42,
                         "fat": 16,
-                        "image": "https://images.unsplash.com/photo-1520072959219-c595dc870360?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/ncDGuP7.png",
                         "notes": "La salsa piri piri es muy alta en sal; si se usa, añade solo una pequeña cantidad.",
                         "ingredients": [
                                     {
@@ -5377,14 +5485,15 @@
                         "prepTime": "25 min",
                         "difficulty": "Fácil",
                         "tags": [
-                                    "Alta Proteína"
+                                    "Alta Proteína",
+                                    "Especiales"
                         ],
                         "baseServings": 1,
                         "kcal": 520,
                         "protein": 34,
                         "carbs": 48,
                         "fat": 20,
-                        "image": "https://images.unsplash.com/photo-1520072959219-c595dc870360?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/sGNJRl2.jpeg",
                         "notes": "Elige tu proteína, tu grasa y tu topping preferido para personalizar esta hamburguesa completa.",
                         "ingredients": [
                                     {
@@ -5429,14 +5538,15 @@
                         "difficulty": "Fácil",
                         "tags": [
                                     "Alta Proteína",
-                                    "Sin Gluten"
+                                    "Sin Gluten",
+                                    "Especiales"
                         ],
                         "baseServings": 1,
                         "kcal": 380,
                         "protein": 28,
                         "carbs": 16,
                         "fat": 20,
-                        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop&q=80",
+                        "image": "https://i.imgur.com/H9rd9CS.png",
                         "notes": "Ideal para cenas de picoteo o cuando apetece un plato diferente incorporando más verdura.",
                         "ingredients": [
                                     {
@@ -5478,7 +5588,7 @@
                         "tags": [
                                     "Vegetariano",
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)"
                         ],
                         "baseServings": 1,
                         "kcal": 260,
@@ -5530,7 +5640,7 @@
                         "tags": [
                                     "Vegetariano",
                                     "Sin Gluten",
-                                    "Rápido (<15m)"
+                                    "Rápido (<15min)"
                         ],
                         "baseServings": 1,
                         "kcal": 190,
@@ -5560,6 +5670,742 @@
                                     "Triturar el plátano congelado junto con el cacao y la bebida de almendras en una batidora potente.",
                                     "Parar y remover con una espátula si es necesario hasta lograr una textura de helado cremoso.",
                                     "Servir inmediatamente."
+                        ]
+            },
+            {
+                        "id": 102,
+                        "title": "Cocido de Lentejas con Verduras y Huevo Duro",
+                        "subtitle": "Guiso casero de lentejas con verduras y huevo duro o taquitos de jamón.",
+                        "category": "Comida/Cena",
+                        "prepTime": "30 min",
+                        "difficulty": "Fácil",
+                        "tags": [
+                                    "Alta Proteína",
+                                    "Sin Gluten",
+                                    "Legumbres"
+                        ],
+                        "baseServings": 1,
+                        "kcal": 460,
+                        "protein": 26,
+                        "carbs": 50,
+                        "fat": 14,
+                        "image": "https://i.imgur.com/0Pr2OXl.jpeg",
+                        "notes": "Puedes sustituir el huevo duro por taquitos de jamón para variar la receta.",
+                        "ingredients": [
+                                    {
+                                                "qty": 150,
+                                                "unit": "g",
+                                                "name": "lentejas cocidas"
+                                    },
+                                    {
+                                                "qty": 1,
+                                                "unit": "unidad",
+                                                "name": "zanahoria"
+                                    },
+                                    {
+                                                "qty": 40,
+                                                "unit": "g",
+                                                "name": "cebolla y pimiento"
+                                    },
+                                    {
+                                                "qty": 1,
+                                                "unit": "unidad",
+                                                "name": "huevo duro o taquitos de jamón"
+                                    },
+                                    {
+                                                "qty": 8,
+                                                "unit": "ml",
+                                                "name": "aceite de oliva virgen extra"
+                                    }
+                        ],
+                        "steps": [
+                                    "Sofreír la cebolla y el pimiento troceados en una olla con un poco de AOVE.",
+                                    "Añadir la zanahoria en rodajas y rehogar unos minutos.",
+                                    "Incorporar las lentejas cocidas junto con un poco de agua o caldo y dejar cocer 10 minutos.",
+                                    "Servir con el huevo duro picado o los taquitos de jamón por encima."
+                        ]
+            },
+            {
+                        "id": 103,
+                        "title": "Tofu Salteado con Sésamo, Edamame y Brócoli",
+                        "subtitle": "Tofu dorado con edamame, brócoli y pimiento rojo al sésamo.",
+                        "category": "Comida/Cena",
+                        "prepTime": "18 min",
+                        "difficulty": "Fácil",
+                        "tags": [
+                                    "Vegetariano",
+                                    "Alta Proteína",
+                                    "Sin Gluten",
+                                    "Legumbres"
+                        ],
+                        "baseServings": 1,
+                        "kcal": 380,
+                        "protein": 26,
+                        "carbs": 20,
+                        "fat": 22,
+                        "image": "https://i.imgur.com/9nl2p5D.jpeg",
+                        "notes": "El edamame aporta un extra de proteína vegetal y fibra a este salteado.",
+                        "ingredients": [
+                                    {
+                                                "qty": 150,
+                                                "unit": "g",
+                                                "name": "tofu firme en dados"
+                                    },
+                                    {
+                                                "qty": 60,
+                                                "unit": "g",
+                                                "name": "edamame cocido"
+                                    },
+                                    {
+                                                "qty": 100,
+                                                "unit": "g",
+                                                "name": "ramilletes de brócoli"
+                                    },
+                                    {
+                                                "qty": 60,
+                                                "unit": "g",
+                                                "name": "pimiento rojo"
+                                    },
+                                    {
+                                                "qty": 5,
+                                                "unit": "ml",
+                                                "name": "aceite de sésamo"
+                                    }
+                        ],
+                        "steps": [
+                                    "Dorar el tofu en dados en una sartén con el aceite de sésamo hasta que quede crujiente por fuera.",
+                                    "Añadir el brócoli y el pimiento rojo troceado y saltear a fuego fuerte 5 minutos.",
+                                    "Incorporar el edamame cocido y una cucharada de salsa de soja, saltear 2 minutos más.",
+                                    "Espolvorear semillas de sésamo antes de servir."
+                        ]
+            },
+            {
+                        "id": 104,
+                        "title": "Higaditos de Pollo Encebollados con Alcachofas",
+                        "subtitle": "Higaditos de pollo o ternera encebollados con guarnición de alcachofas.",
+                        "category": "Comida/Cena",
+                        "prepTime": "25 min",
+                        "difficulty": "Media",
+                        "tags": [
+                                    "Alta Proteína",
+                                    "Sin Gluten",
+                                    "Carnes"
+                        ],
+                        "baseServings": 1,
+                        "kcal": 380,
+                        "protein": 32,
+                        "carbs": 18,
+                        "fat": 18,
+                        "image": "https://i.imgur.com/OGaV61Z.png",
+                        "notes": "Los higaditos son una fuente muy concentrada de hierro y vitamina A; consume con moderación.",
+                        "ingredients": [
+                                    {
+                                                "qty": 150,
+                                                "unit": "g",
+                                                "name": "higaditos de pollo o ternera"
+                                    },
+                                    {
+                                                "qty": 60,
+                                                "unit": "g",
+                                                "name": "cebolla en juliana"
+                                    },
+                                    {
+                                                "qty": 150,
+                                                "unit": "g",
+                                                "name": "alcachofas cocidas"
+                                    },
+                                    {
+                                                "qty": 8,
+                                                "unit": "ml",
+                                                "name": "aceite de oliva virgen extra"
+                                    },
+                                    {
+                                                "qty": 1,
+                                                "unit": "pizca",
+                                                "name": "perejil picado"
+                                    }
+                        ],
+                        "steps": [
+                                    "Pochar la cebolla en juliana en una sartén con AOVE hasta que esté dorada.",
+                                    "Añadir los higaditos limpios y saltear a fuego medio-alto hasta que se hagan por dentro.",
+                                    "Calentar las alcachofas cocidas como guarnición.",
+                                    "Servir los higaditos encebollados espolvoreados con perejil fresco."
+                        ]
+            },
+            {
+                        "id": 105,
+                        "title": "Salteado de Patata y Espárragos con Pescado",
+                        "subtitle": "Patata salteada con espárragos verdes y un filete de pescado blanco.",
+                        "category": "Comida/Cena",
+                        "prepTime": "25 min",
+                        "difficulty": "Fácil",
+                        "tags": [
+                                    "Alta Proteína",
+                                    "Sin Gluten",
+                                    "Pescados"
+                        ],
+                        "baseServings": 1,
+                        "kcal": 440,
+                        "protein": 34,
+                        "carbs": 38,
+                        "fat": 16,
+                        "image": "https://i.imgur.com/ehzT84l.png",
+                        "notes": "Receta campera sencilla que combina hidratos de calidad con pescado blanco magro.",
+                        "ingredients": [
+                                    {
+                                                "qty": 150,
+                                                "unit": "g",
+                                                "name": "patata cocida en dados"
+                                    },
+                                    {
+                                                "qty": 120,
+                                                "unit": "g",
+                                                "name": "espárragos verdes"
+                                    },
+                                    {
+                                                "qty": 170,
+                                                "unit": "g",
+                                                "name": "filete de pescado blanco"
+                                    },
+                                    {
+                                                "qty": 10,
+                                                "unit": "ml",
+                                                "name": "aceite de oliva virgen extra"
+                                    },
+                                    {
+                                                "qty": 1,
+                                                "unit": "diente",
+                                                "name": "ajo laminado"
+                                    }
+                        ],
+                        "steps": [
+                                    "Saltear la patata cocida en dados en una sartén con AOVE y ajo laminado hasta dorar.",
+                                    "Añadir los espárragos troceados y saltear 5 minutos más.",
+                                    "Cocinar el filete de pescado a la plancha o en airfryer aparte.",
+                                    "Servir el pescado sobre el salteado de patata y espárragos."
+                        ]
+            },
+            {
+                        "id": 106,
+                        "title": "Dorada al Horno con Limón y Verduras",
+                        "subtitle": "Dorada horneada con rodajas de limón sobre cama de patata y verduras.",
+                        "category": "Comida/Cena",
+                        "prepTime": "30 min",
+                        "difficulty": "Fácil",
+                        "tags": [
+                                    "Alta Proteína",
+                                    "Sin Gluten",
+                                    "Pescados"
+                        ],
+                        "baseServings": 1,
+                        "kcal": 420,
+                        "protein": 36,
+                        "carbs": 32,
+                        "fat": 16,
+                        "image": "https://i.imgur.com/0MmJ7dx.png",
+                        "notes": "Pescado blanco muy versátil; puedes sustituir la dorada por lubina o merluza.",
+                        "ingredients": [
+                                    {
+                                                "qty": 200,
+                                                "unit": "g",
+                                                "name": "dorada limpia"
+                                    },
+                                    {
+                                                "qty": 1,
+                                                "unit": "unidad",
+                                                "name": "limón en rodajas"
+                                    },
+                                    {
+                                                "qty": 150,
+                                                "unit": "g",
+                                                "name": "patata en rodajas"
+                                    },
+                                    {
+                                                "qty": 80,
+                                                "unit": "g",
+                                                "name": "pimiento y cebolla"
+                                    },
+                                    {
+                                                "qty": 10,
+                                                "unit": "ml",
+                                                "name": "aceite de oliva virgen extra"
+                                    }
+                        ],
+                        "steps": [
+                                    "Colocar la patata, el pimiento y la cebolla en rodajas en la base de una bandeja de horno.",
+                                    "Disponer la dorada limpia encima y cubrir con rodajas de limón.",
+                                    "Regar con AOVE, sal y hierbas al gusto.",
+                                    "Hornear a 200°C durante 20-25 minutos hasta que el pescado esté hecho."
+                        ]
+            },
+            {
+                        "id": 107,
+                        "title": "Ensalada de Salmón Ahumado, Fresas y Queso Semicurado",
+                        "subtitle": "Ensalada fresca con salmón ahumado, fresas y queso semicurado.",
+                        "category": "Comida/Cena",
+                        "prepTime": "10 min",
+                        "difficulty": "Muy Fácil",
+                        "tags": [
+                                    "Alta Proteína",
+                                    "Sin Gluten",
+                                    "Rápido (<15min)",
+                                    "Pescados"
+                        ],
+                        "baseServings": 1,
+                        "kcal": 380,
+                        "protein": 26,
+                        "carbs": 16,
+                        "fat": 24,
+                        "image": "https://i.imgur.com/Yvddnjq.png",
+                        "notes": "Combinación agridulce entre el salmón ahumado y las fresas frescas.",
+                        "ingredients": [
+                                    {
+                                                "qty": 80,
+                                                "unit": "g",
+                                                "name": "salmón ahumado"
+                                    },
+                                    {
+                                                "qty": 60,
+                                                "unit": "g",
+                                                "name": "base verde"
+                                    },
+                                    {
+                                                "qty": 60,
+                                                "unit": "g",
+                                                "name": "tomates cherry"
+                                    },
+                                    {
+                                                "qty": 50,
+                                                "unit": "g",
+                                                "name": "fresas troceadas"
+                                    },
+                                    {
+                                                "qty": 20,
+                                                "unit": "g",
+                                                "name": "queso semicurado en virutas"
+                                    }
+                        ],
+                        "steps": [
+                                    "Disponer la base verde y los tomates cherry en un plato.",
+                                    "Añadir el salmón ahumado y las fresas troceadas.",
+                                    "Coronar con virutas de queso semicurado.",
+                                    "Aliñar con aceite de oliva virgen extra y una pizca de pimienta."
+                        ]
+            },
+            {
+                        "id": 108,
+                        "title": "Quinoa con Huevo Pasado por Agua y Atún",
+                        "subtitle": "Bowl de quinoa con huevo pasado por agua, aguacate y atún.",
+                        "category": "Comida/Cena",
+                        "prepTime": "15 min",
+                        "difficulty": "Fácil",
+                        "tags": [
+                                    "Alta Proteína",
+                                    "Sin Gluten",
+                                    "Rápido (<15min)",
+                                    "Huevos",
+                                    "Arroces y Pastas"
+                        ],
+                        "baseServings": 1,
+                        "kcal": 460,
+                        "protein": 30,
+                        "carbs": 38,
+                        "fat": 20,
+                        "image": "https://i.imgur.com/9rXijnO.png",
+                        "notes": "El huevo pasado por agua mantiene la yema cremosa, ideal para mezclar con la quinoa.",
+                        "ingredients": [
+                                    {
+                                                "qty": 50,
+                                                "unit": "g",
+                                                "name": "quinoa en seco"
+                                    },
+                                    {
+                                                "qty": 1,
+                                                "unit": "unidad",
+                                                "name": "huevo pasado por agua"
+                                    },
+                                    {
+                                                "qty": 50,
+                                                "unit": "g",
+                                                "name": "aguacate"
+                                    },
+                                    {
+                                                "qty": 1,
+                                                "unit": "lata",
+                                                "name": "atún al natural"
+                                    },
+                                    {
+                                                "qty": 5,
+                                                "unit": "ml",
+                                                "name": "aceite de oliva virgen extra"
+                                    }
+                        ],
+                        "steps": [
+                                    "Cocer la quinoa en el doble de agua durante 12 minutos y dejar enfriar.",
+                                    "Cocinar el huevo pasado por agua sumergiéndolo 5-6 minutos en agua hirviendo.",
+                                    "Montar el bowl con la quinoa, el aguacate en láminas y el atún escurrido.",
+                                    "Añadir el huevo pelado por encima y aliñar con AOVE."
+                        ]
+            },
+            {
+                        "id": 109,
+                        "title": "Pizza Casera de Base Fina con Alcachofas",
+                        "subtitle": "Pizza de base extrafina con tomate, alcachofas y proteína a elegir.",
+                        "category": "Comida/Cena",
+                        "prepTime": "25 min",
+                        "difficulty": "Fácil",
+                        "tags": [
+                                    "Alta Proteína",
+                                    "Especiales"
+                        ],
+                        "baseServings": 1,
+                        "kcal": 480,
+                        "protein": 30,
+                        "carbs": 44,
+                        "fat": 20,
+                        "image": "https://i.imgur.com/eXOuIvR.png",
+                        "notes": "Usa una base de pizza extrafina para controlar mejor la ración de hidratos.",
+                        "ingredients": [
+                                    {
+                                                "qty": 1,
+                                                "unit": "unidad",
+                                                "name": "base de pizza extrafina"
+                                    },
+                                    {
+                                                "qty": 60,
+                                                "unit": "g",
+                                                "name": "tomate frito casero"
+                                    },
+                                    {
+                                                "qty": 80,
+                                                "unit": "g",
+                                                "name": "alcachofas en conserva"
+                                    },
+                                    {
+                                                "qty": 100,
+                                                "unit": "g",
+                                                "name": "pollo, jamón o atún"
+                                    },
+                                    {
+                                                "qty": 30,
+                                                "unit": "g",
+                                                "name": "queso mozzarella rallado"
+                                    }
+                        ],
+                        "steps": [
+                                    "Extender el tomate frito sobre la base de pizza extrafina.",
+                                    "Repartir las alcachofas troceadas y la proteína elegida por encima.",
+                                    "Cubrir con el queso mozzarella rallado.",
+                                    "Hornear a 200°C durante 12-15 minutos hasta que el queso funda y la base esté crujiente."
+                        ]
+            },
+            {
+                        "id": 110,
+                        "title": "Panecillo de Cristal con Hamburguesa y Pepinillos",
+                        "subtitle": "Panecillo de cristal relleno de hamburguesa, canónigos y pepinillos.",
+                        "category": "Comida/Cena",
+                        "prepTime": "20 min",
+                        "difficulty": "Fácil",
+                        "tags": [
+                                    "Alta Proteína",
+                                    "Especiales"
+                        ],
+                        "baseServings": 1,
+                        "kcal": 500,
+                        "protein": 34,
+                        "carbs": 42,
+                        "fat": 20,
+                        "image": "https://i.imgur.com/ZsUmvat.png",
+                        "notes": "Puedes sustituir la hamburguesa de ternera por una de pollo o pavo para aligerar el plato.",
+                        "ingredients": [
+                                    {
+                                                "qty": 1,
+                                                "unit": "unidad",
+                                                "name": "hamburguesa de ternera o pollo"
+                                    },
+                                    {
+                                                "qty": 1,
+                                                "unit": "unidad",
+                                                "name": "panecillo de cristal"
+                                    },
+                                    {
+                                                "qty": 30,
+                                                "unit": "g",
+                                                "name": "canónigos"
+                                    },
+                                    {
+                                                "qty": 20,
+                                                "unit": "g",
+                                                "name": "pepinillos en rodajas"
+                                    },
+                                    {
+                                                "qty": 15,
+                                                "unit": "g",
+                                                "name": "queso curado o mozzarella"
+                                    }
+                        ],
+                        "steps": [
+                                    "Cocinar la hamburguesa a la plancha al punto deseado.",
+                                    "Tostar ligeramente el panecillo de cristal.",
+                                    "Montar con los canónigos, la hamburguesa, el queso y los pepinillos en rodajas.",
+                                    "Servir templado."
+                        ]
+            },
+            {
+                        "id": 111,
+                        "title": "Arroz con Verdura y Hamburguesa de Carne",
+                        "subtitle": "Arroz blanco con pimiento o verdura de temporada y hamburguesa de carne.",
+                        "category": "Comida/Cena",
+                        "prepTime": "20 min",
+                        "difficulty": "Fácil",
+                        "tags": [
+                                    "Alta Proteína",
+                                    "Sin Gluten",
+                                    "Carnes",
+                                    "Arroces y Pastas"
+                        ],
+                        "baseServings": 1,
+                        "kcal": 480,
+                        "protein": 32,
+                        "carbs": 50,
+                        "fat": 16,
+                        "image": "https://i.imgur.com/vYeeVfM.jpeg",
+                        "notes": "Plato sencillo y versátil: cambia la verdura de acompañamiento según lo que tengas en la nevera.",
+                        "ingredients": [
+                                    {
+                                                "qty": 50,
+                                                "unit": "g",
+                                                "name": "arroz en seco"
+                                    },
+                                    {
+                                                "qty": 1,
+                                                "unit": "unidad",
+                                                "name": "hamburguesa de carne o pollo"
+                                    },
+                                    {
+                                                "qty": 100,
+                                                "unit": "g",
+                                                "name": "pimiento rojo o verdura de temporada"
+                                    },
+                                    {
+                                                "qty": 8,
+                                                "unit": "ml",
+                                                "name": "aceite de oliva virgen extra"
+                                    }
+                        ],
+                        "steps": [
+                                    "Cocer el arroz en abundante agua con sal durante 18-20 minutos.",
+                                    "Saltear el pimiento o la verdura elegida en una sartén con AOVE.",
+                                    "Cocinar la hamburguesa a la plancha al punto deseado.",
+                                    "Servir el arroz con la verdura salteada y la hamburguesa."
+                        ]
+            },
+            {
+                        "id": 112,
+                        "title": "Ensalada de Garbanzos, Melva, Tomate y Perejil",
+                        "subtitle": "Ensalada fresca de garbanzos con melva, tomate y limón exprimido.",
+                        "category": "Comida/Cena",
+                        "prepTime": "12 min",
+                        "difficulty": "Muy Fácil",
+                        "tags": [
+                                    "Alta Proteína",
+                                    "Sin Gluten",
+                                    "Rápido (<15min)",
+                                    "Legumbres"
+                        ],
+                        "baseServings": 1,
+                        "kcal": 420,
+                        "protein": 28,
+                        "carbs": 38,
+                        "fat": 16,
+                        "image": "https://i.imgur.com/edQY4mC.png",
+                        "notes": "La melva es un pescado azul similar al bonito, rico en Omega 3 y muy económico.",
+                        "ingredients": [
+                                    {
+                                                "qty": 150,
+                                                "unit": "g",
+                                                "name": "garbanzos cocidos"
+                                    },
+                                    {
+                                                "qty": 1,
+                                                "unit": "lata",
+                                                "name": "melva en conserva"
+                                    },
+                                    {
+                                                "qty": 80,
+                                                "unit": "g",
+                                                "name": "espinaca fresca"
+                                    },
+                                    {
+                                                "qty": 1,
+                                                "unit": "unidad",
+                                                "name": "tomate troceado"
+                                    },
+                                    {
+                                                "qty": 10,
+                                                "unit": "ml",
+                                                "name": "zumo de limón y AOVE"
+                                    }
+                        ],
+                        "steps": [
+                                    "Lavar los garbanzos cocidos y mezclarlos con la espinaca fresca y el tomate troceado en un bol.",
+                                    "Añadir la melva escurrida por encima.",
+                                    "Aliñar con el zumo de limón exprimido, AOVE, perejil picado y una pizca de sal."
+                        ]
+            },
+            {
+                        "id": 113,
+                        "title": "Medallones de Merluza al Pimentón con Arroz",
+                        "subtitle": "Medallones de merluza al pimentón con arroz blanco y salsa de soja.",
+                        "category": "Comida/Cena",
+                        "prepTime": "20 min",
+                        "difficulty": "Fácil",
+                        "tags": [
+                                    "Alta Proteína",
+                                    "Sin Gluten",
+                                    "Pescados",
+                                    "Arroces y Pastas"
+                        ],
+                        "baseServings": 1,
+                        "kcal": 420,
+                        "protein": 36,
+                        "carbs": 42,
+                        "fat": 10,
+                        "image": "https://i.imgur.com/RveANvj.jpeg",
+                        "notes": "El pimentón dulce aporta color y sabor sin necesidad de añadir grasa extra.",
+                        "ingredients": [
+                                    {
+                                                "qty": 180,
+                                                "unit": "g",
+                                                "name": "medallones de merluza"
+                                    },
+                                    {
+                                                "qty": 50,
+                                                "unit": "g",
+                                                "name": "arroz en seco"
+                                    },
+                                    {
+                                                "qty": 10,
+                                                "unit": "ml",
+                                                "name": "salsa de soja baja en sodio"
+                                    },
+                                    {
+                                                "qty": 1,
+                                                "unit": "g",
+                                                "name": "pimentón dulce"
+                                    },
+                                    {
+                                                "qty": 5,
+                                                "unit": "ml",
+                                                "name": "aceite de oliva virgen extra"
+                                    }
+                        ],
+                        "steps": [
+                                    "Cocer el arroz en abundante agua con sal durante 18-20 minutos.",
+                                    "Sazonar los medallones de merluza con pimentón dulce y sal.",
+                                    "Cocinar la merluza a la plancha con AOVE hasta que esté hecha por dentro.",
+                                    "Servir con el arroz y un chorrito de salsa de soja."
+                        ]
+            },
+            {
+                        "id": 114,
+                        "title": "Fajitas de Maíz con Carne Picada Estilo Tacos",
+                        "subtitle": "Fajitas de maíz rellenas de carne picada al estilo tacos con queso mozzarella.",
+                        "category": "Comida/Cena",
+                        "prepTime": "20 min",
+                        "difficulty": "Fácil",
+                        "tags": [
+                                    "Alta Proteína",
+                                    "Especiales"
+                        ],
+                        "baseServings": 1,
+                        "kcal": 460,
+                        "protein": 30,
+                        "carbs": 40,
+                        "fat": 18,
+                        "image": "https://i.imgur.com/2dtInpE.png",
+                        "notes": "Sirve con salsa mexicana o guacamole casero para dar un toque fresco a los tacos.",
+                        "ingredients": [
+                                    {
+                                                "qty": 3,
+                                                "unit": "unidades",
+                                                "name": "fajitas de maíz"
+                                    },
+                                    {
+                                                "qty": 150,
+                                                "unit": "g",
+                                                "name": "carne picada"
+                                    },
+                                    {
+                                                "qty": 60,
+                                                "unit": "g",
+                                                "name": "pimiento y cebolla"
+                                    },
+                                    {
+                                                "qty": 20,
+                                                "unit": "g",
+                                                "name": "queso mozzarella rallado"
+                                    },
+                                    {
+                                                "qty": 20,
+                                                "unit": "g",
+                                                "name": "salsa mexicana (opcional)"
+                                    }
+                        ],
+                        "steps": [
+                                    "Saltear la carne picada junto con el pimiento y la cebolla troceados.",
+                                    "Calentar las fajitas de maíz en una sartén o en el microondas.",
+                                    "Rellenar cada fajita con la carne picada y el queso mozzarella.",
+                                    "Servir al estilo tacos con salsa mexicana opcional."
+                        ]
+            },
+            {
+                        "id": 115,
+                        "title": "Carpaccio de Tomate y Mozzarella con Albahaca",
+                        "subtitle": "Carpaccio fresco de tomate y mozzarella aderezado con aove y albahaca.",
+                        "category": "Comida/Cena",
+                        "prepTime": "10 min",
+                        "difficulty": "Muy Fácil",
+                        "tags": [
+                                    "Vegetariano",
+                                    "Sin Gluten",
+                                    "Rápido (<15min)",
+                                    "Verduras y Acompañamientos"
+                        ],
+                        "baseServings": 1,
+                        "kcal": 320,
+                        "protein": 16,
+                        "carbs": 12,
+                        "fat": 24,
+                        "image": "https://i.imgur.com/lBmU3nh.png",
+                        "notes": "Entrante ligero y fresco; añade una fuente proteica como huevo o atún si lo tomas como plato único.",
+                        "ingredients": [
+                                    {
+                                                "qty": 2,
+                                                "unit": "unidades",
+                                                "name": "tomates maduros en láminas"
+                                    },
+                                    {
+                                                "qty": 100,
+                                                "unit": "g",
+                                                "name": "mozzarella fresca en láminas"
+                                    },
+                                    {
+                                                "qty": 10,
+                                                "unit": "ml",
+                                                "name": "aceite de oliva virgen extra"
+                                    },
+                                    {
+                                                "qty": 1,
+                                                "unit": "pizca",
+                                                "name": "albahaca fresca y pimienta"
+                                    }
+                        ],
+                        "steps": [
+                                    "Cortar el tomate y la mozzarella en láminas finas del mismo grosor.",
+                                    "Disponer alternando las láminas de tomate y mozzarella en un plato.",
+                                    "Aliñar con AOVE, sal en escamas y pimienta recién molida.",
+                                    "Decorar con hojas de albahaca fresca."
                         ]
             }
 ];
@@ -5694,6 +6540,14 @@
                 if (idx === 0) {
                     btn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
                     btn.classList.add('bg-brand-primary', 'text-white', 'shadow-sm');
+                }
+            });
+            document.querySelectorAll('.tag-btn').forEach((btn, idx) => {
+                btn.classList.remove('bg-brand-light/60', 'text-brand-dark', 'border-brand-secondary/40');
+                btn.classList.add('bg-slate-100', 'text-slate-600', 'border-slate-200');
+                if (idx === 0) {
+                    btn.classList.remove('bg-slate-100', 'text-slate-600', 'border-slate-200');
+                    btn.classList.add('bg-brand-light/60', 'text-brand-dark', 'border-brand-secondary/40');
                 }
             });
             renderRecipes();
