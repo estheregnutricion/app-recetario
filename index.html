@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -168,17 +167,12 @@
                         <i class="fa-solid fa-leaf text-brand-primary text-xl"></i>
                     </div>
                     <div>
-                        <span class="text-[10px] sm:text-xs font-semibold text-brand-dark tracking-wider uppercase block">Recetario digital de consulta</span>
-                        <h1 class="text-base sm:text-lg font-bold text-slate-800 leading-none"> ® EGNUTRICION | Esther Girón Fernández</h1>
+                        <h1 class="text-base sm:text-lg font-bold text-slate-800 leading-none">EGNUTRICION APP</h1>
                     </div>
                 </div>
 
-                <!-- Consultation Badge -->
+                <!-- Botones de acción -->
                 <div class="flex items-center space-x-3">
-                    <div class="flex items-center space-x-2 bg-brand-light/50 px-3 py-1.5 rounded-full border border-brand-secondary/50">
-                        <i class="fa-solid fa-book-medical text-brand-dark text-xs"></i>
-                        <span class="text-xs font-bold text-brand-dark hidden sm:inline">Catálogo Oficial de Consulta</span>
-                    </div>
                     <button onclick="openResourcesModal()" class="text-xs font-bold text-brand-dark hover:bg-brand-light/50 px-3 py-1.5 rounded-xl border border-brand-secondary/50 transition-all flex items-center gap-1.5">
                         <i class="fa-solid fa-folder-open"></i> <span class="hidden sm:inline">Recursos</span>
                     </button>
@@ -218,21 +212,13 @@
                     </div>
 
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
-                        RECETARIO <br class="hidden sm:inline">
+                        RECETARIO <br>
                         <span class="text-brand-light font-normal text-lg sm:text-2xl">EGNUTRICION Y SALUD</span>
                     </h2>
 
                     <p class="text-slate-100/90 text-xs sm:text-sm leading-relaxed">
                         Las recetas vistas en consulta y más para tenerlas siempre a mano.
                     </p>
-
-                    <!-- Search Input -->
-                    <div class="pt-2">
-                        <div class="relative max-w-md mx-auto lg:mx-0">
-                            <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
-                            <input type="text" id="search-input" onkeyup="handleSearch()" placeholder="Buscar por plato, ingrediente o tipo de dieta..." class="w-full pl-11 pr-4 py-3 rounded-2xl bg-white text-slate-800 placeholder-slate-400 shadow-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-light transition-all">
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Info Card -->
@@ -250,7 +236,7 @@
                             <span>Calculadora dinámica de porciones e ingredientes</span>
                         </div>
                         <p class="text-[10px] text-slate-400 leading-relaxed pt-1 border-t border-slate-100">
-                            Los macronutrientes son valores APROXIMADOS calculados a partir de tablas nutricionales estándar. Pueden haber variaciones. <strong>Tu requerimiento y por tanto cantidades dependerá de TU ESTRUCTURA Y PAUTA PERSONALIZADA: adapta las cantidades a tu recomendación personal<strong>. 
+                            Los macronutrientes son valores APROXIMADOS. Pueden haber variaciones. <strong>Tu requerimiento y por tanto cantidades dependerá de TU ESTRUCTURA Y PAUTA PERSONALIZADA: adapta las cantidades a tu recomendación personal<strong>. 
                         </p>
                     </div>
                 </div>
@@ -261,8 +247,8 @@
             <div class="flex flex-col gap-4 border-b border-slate-200 pb-4">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     <div>
-                        <h3 class="text-xl font-bold text-slate-800">Catálogo de Recetas</h3>
-                        <p class="text-xs text-slate-500">Haz clic en cualquier tarjeta para abrir la ficha con ingredientes escalables y desglose macro.</p>
+                        <h3 class="text-xl font-bold text-slate-800">Recetario</h3>
+                        <p class="text-xs text-slate-500">Haz clic en cualquier tarjeta para abrir la ficha con ingredientes, proceso y desglose macro.</p>
                     </div>
 
                     <!-- Category Pills -->
@@ -294,6 +280,14 @@
                     <button onclick="filterTag('Arroces y Pastas')" class="tag-btn px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-medium border border-slate-200 hover:bg-slate-200 transition-all">🍚 Arroces y Pastas</button>
                     <button onclick="filterTag('Especiales')" class="tag-btn px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-medium border border-slate-200 hover:bg-slate-200 transition-all">✨ Especiales</button>
                     <button onclick="filterTag('Verduras y Acompañamientos')" class="tag-btn px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-medium border border-slate-200 hover:bg-slate-200 transition-all">🥦 Verduras y Acompañamientos</button>
+                </div>
+
+                <!-- Search Input -->
+                <div class="pt-2">
+                    <div class="relative w-full sm:max-w-md">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" id="search-input" onkeyup="handleSearch()" placeholder="Buscar por plato, ingrediente o tipo de dieta..." class="w-full pl-11 pr-4 py-3 rounded-2xl bg-white text-slate-800 placeholder-slate-400 border border-slate-200 shadow-sm text-sm focus:outline-none focus:ring-2 focus:ring-brand-light transition-all">
+                    </div>
                 </div>
             </div>
 
@@ -475,9 +469,9 @@
 
     <footer class="bg-white border-t border-brand-light py-6 mt-12">
         <div class="max-w-7xl mx-auto px-4 text-center space-y-2">
-            <p class="text-xs text-slate-500">© 2026 Consulta de Nutrición Digital. Repositorio Oficial de Recetas para Pacientes. Basado en el recetario de Esther Girón Fernández – Dietista Nutricionista.</p>
+            <p class="text-xs text-slate-500">© 2026 EGNUTRICION Y SALUD. Esther Girón Fernández – Dietista Nutricionista.</p>
             <div class="flex justify-center space-x-4 text-xs font-semibold text-brand-dark">
-                <span>Catálogo Nutricional</span>
+                <span>Recetario Digital</span>
                 <span>•</span>
                 <span>Consulta de Nutrición</span>
             </div>
