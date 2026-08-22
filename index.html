@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -284,7 +285,8 @@
                 <!-- Secondary Tag Filters -->
                 <div class="flex items-center gap-2 flex-wrap text-xs pt-1">
                     <span class="text-slate-400 font-semibold text-[11px] uppercase tracking-wider mr-1">Filtro rápido:</span>
-                    <button onclick="filterTag('all')" class="tag-btn active-tag px-2.5 py-1 rounded-lg bg-brand-light/60 text-brand-dark font-medium border border-brand-secondary/40 hover:bg-brand-light transition-all">Todos los tipos</button>
+                    <button id="tag-btn-favs" onclick="filterTag('__FAVORITES__')" class="tag-btn px-2.5 py-1 rounded-lg bg-rose-50 text-rose-500 font-medium border border-rose-200 hover:bg-rose-100 transition-all">❤️ Favs</button>
+                    <button id="tag-btn-all" onclick="filterTag('all')" class="tag-btn active-tag px-2.5 py-1 rounded-lg bg-brand-light/60 text-brand-dark font-medium border border-brand-secondary/40 hover:bg-brand-light transition-all">Todos los tipos</button>
                     <button onclick="filterTag('Legumbres')" class="tag-btn px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-medium border border-slate-200 hover:bg-slate-200 transition-all">🫘 Legumbres</button>
                     <button onclick="filterTag('Carnes')" class="tag-btn px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-medium border border-slate-200 hover:bg-slate-200 transition-all">🍗 Carnes</button>
                     <button onclick="filterTag('Pescados')" class="tag-btn px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 font-medium border border-slate-200 hover:bg-slate-200 transition-all">🐟 Pescados</button>
@@ -301,11 +303,11 @@
 
             <!-- Empty State -->
             <div id="empty-state" class="hidden py-16 text-center space-y-3 bg-white rounded-3xl border border-dashed border-slate-300">
-                <div class="w-16 h-16 bg-brand-light/50 text-brand-dark rounded-full flex items-center justify-center mx-auto text-2xl">
+                <div id="empty-state-icon" class="w-16 h-16 bg-brand-light/50 text-brand-dark rounded-full flex items-center justify-center mx-auto text-2xl">
                     <i class="fa-solid fa-utensils"></i>
                 </div>
-                <h4 class="text-base font-bold text-slate-700">No se encontraron recetas</h4>
-                <p class="text-xs text-slate-500 max-w-md mx-auto">Intenta cambiar la palabra de búsqueda o seleccionar otra categoría.</p>
+                <h4 id="empty-state-title" class="text-base font-bold text-slate-700">No se encontraron recetas</h4>
+                <p id="empty-state-text" class="text-xs text-slate-500 max-w-md mx-auto">Intenta cambiar la palabra de búsqueda o seleccionar otra categoría.</p>
                 <button onclick="resetFilters()" class="text-xs font-bold text-brand-primary hover:underline pt-2">Restablecer filtros</button>
             </div>
         </section>
@@ -649,7 +651,13 @@
                 userFavorites.add(recipeId);
             }
 
-            updateFavoriteIcon(recipeId);
+            if (activeTag === '__FAVORITES__') {
+                // Si estamos viendo el filtro de favoritos, re-renderizamos para que la tarjeta
+                // desaparezca/aparezca al instante según corresponda
+                renderRecipes();
+            } else {
+                updateFavoriteIcon(recipeId);
+            }
         }
 
         // Alternar favorito desde el corazón de la ficha/modal abierta
@@ -771,7 +779,11 @@
 
             const filtered = recipes.filter(r => {
                 const matchesCategory = activeCategory === 'all' || r.category === activeCategory;
-                const matchesTag = activeTag === 'all' || (r.tags && r.tags.includes(activeTag));
+                const matchesTag = activeTag === 'all'
+                    ? true
+                    : activeTag === '__FAVORITES__'
+                        ? userFavorites.has(r.id)
+                        : (r.tags && r.tags.includes(activeTag));
                 const matchesSearch = r.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                                       r.ingredients.some(i => i.name.toLowerCase().includes(searchQuery.toLowerCase()));
 
@@ -779,6 +791,22 @@
             });
 
             if (filtered.length === 0) {
+                const emptyIcon = document.getElementById('empty-state-icon');
+                const emptyTitle = document.getElementById('empty-state-title');
+                const emptyText = document.getElementById('empty-state-text');
+
+                if (activeTag === '__FAVORITES__') {
+                    emptyIcon.className = "w-16 h-16 bg-rose-50 text-rose-400 rounded-full flex items-center justify-center mx-auto text-2xl";
+                    emptyIcon.innerHTML = '<i class="fa-regular fa-heart"></i>';
+                    emptyTitle.textContent = 'Aún no tienes recetas favoritas guardadas';
+                    emptyText.textContent = 'Pulsa el corazón de cualquier receta para guardarla aquí y encontrarla rápido.';
+                } else {
+                    emptyIcon.className = "w-16 h-16 bg-brand-light/50 text-brand-dark rounded-full flex items-center justify-center mx-auto text-2xl";
+                    emptyIcon.innerHTML = '<i class="fa-solid fa-utensils"></i>';
+                    emptyTitle.textContent = 'No se encontraron recetas';
+                    emptyText.textContent = 'Intenta cambiar la palabra de búsqueda o seleccionar otra categoría.';
+                }
+
                 emptyState.classList.remove('hidden');
                 return;
             } else {
@@ -859,13 +887,25 @@
 
         function filterTag(tag) {
             activeTag = tag;
+
             document.querySelectorAll('.tag-btn').forEach(btn => {
-                btn.classList.remove('bg-brand-light/60', 'text-brand-dark', 'border-brand-secondary/40');
-                btn.classList.add('bg-slate-100', 'text-slate-600', 'border-slate-200');
+                if (btn.id === 'tag-btn-favs') {
+                    btn.classList.remove('bg-rose-500', 'text-white', 'border-rose-500', 'shadow-sm');
+                    btn.classList.add('bg-rose-50', 'text-rose-500', 'border-rose-200');
+                } else {
+                    btn.classList.remove('bg-brand-light/60', 'text-brand-dark', 'border-brand-secondary/40');
+                    btn.classList.add('bg-slate-100', 'text-slate-600', 'border-slate-200');
+                }
             });
 
-            event.currentTarget.classList.remove('bg-slate-100', 'text-slate-600', 'border-slate-200');
-            event.currentTarget.classList.add('bg-brand-light/60', 'text-brand-dark', 'border-brand-secondary/40');
+            const clicked = event.currentTarget;
+            if (clicked.id === 'tag-btn-favs') {
+                clicked.classList.remove('bg-rose-50', 'text-rose-500', 'border-rose-200');
+                clicked.classList.add('bg-rose-500', 'text-white', 'border-rose-500', 'shadow-sm');
+            } else {
+                clicked.classList.remove('bg-slate-100', 'text-slate-600', 'border-slate-200');
+                clicked.classList.add('bg-brand-light/60', 'text-brand-dark', 'border-brand-secondary/40');
+            }
 
             renderRecipes();
         }
@@ -888,14 +928,20 @@
                     btn.classList.add('bg-brand-primary', 'text-white', 'shadow-sm');
                 }
             });
-            document.querySelectorAll('.tag-btn').forEach((btn, idx) => {
-                btn.classList.remove('bg-brand-light/60', 'text-brand-dark', 'border-brand-secondary/40');
-                btn.classList.add('bg-slate-100', 'text-slate-600', 'border-slate-200');
-                if (idx === 0) {
-                    btn.classList.remove('bg-slate-100', 'text-slate-600', 'border-slate-200');
-                    btn.classList.add('bg-brand-light/60', 'text-brand-dark', 'border-brand-secondary/40');
+            document.querySelectorAll('.tag-btn').forEach(btn => {
+                if (btn.id === 'tag-btn-favs') {
+                    btn.classList.remove('bg-rose-500', 'text-white', 'border-rose-500', 'shadow-sm');
+                    btn.classList.add('bg-rose-50', 'text-rose-500', 'border-rose-200');
+                } else {
+                    btn.classList.remove('bg-brand-light/60', 'text-brand-dark', 'border-brand-secondary/40');
+                    btn.classList.add('bg-slate-100', 'text-slate-600', 'border-slate-200');
                 }
             });
+            const allTagBtn = document.getElementById('tag-btn-all');
+            if (allTagBtn) {
+                allTagBtn.classList.remove('bg-slate-100', 'text-slate-600', 'border-slate-200');
+                allTagBtn.classList.add('bg-brand-light/60', 'text-brand-dark', 'border-brand-secondary/40');
+            }
             renderRecipes();
         }
 
