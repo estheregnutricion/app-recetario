@@ -255,11 +255,11 @@
                         <button onclick="filterCategory('all')" class="cat-btn active px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-brand-primary text-white transition-all shadow-sm">
                             Todas
                         </button>
-                        <button onclick="filterCategory('Colaciones')" class="cat-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-slate-600 border border-slate-200 hover:bg-brand-light/40 transition-all">
-                            🌅 Colaciones
-                        </button>
                         <button onclick="filterCategory('Comida/Cena')" class="cat-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-slate-600 border border-slate-200 hover:bg-brand-light/40 transition-all">
                             🍽️ Comida/Cena
+                        </button>
+                        <button onclick="filterCategory('Colaciones')" class="cat-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-slate-600 border border-slate-200 hover:bg-brand-light/40 transition-all">
+                            🌅 Colaciones
                         </button>
                         <button onclick="filterCategory('Dulces saludables')" class="cat-btn px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-slate-600 border border-slate-200 hover:bg-brand-light/40 transition-all">
                             🍫 Dulces saludables
@@ -528,7 +528,7 @@
             const { data, error } = await supabaseClient
                 .from('recipes')
                 .select('*')
-                .order('id', { ascending: true });
+                .order('created_at', { ascending: false });
 
             if (error) {
                 console.error('Error cargando recetas de Supabase:', error);
