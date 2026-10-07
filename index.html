@@ -421,6 +421,16 @@
                     </div>
                     <p class="text-[9px] text-slate-300 mt-1.5 leading-tight">Valores aproximados a modo informativo, calculados con tablas nutricionales estándar.</p>
                 </div>
+
+                <!-- Recomendaciones de recetas similares -->
+                <div id="similar-recipes-section" class="hidden pt-3 border-t border-slate-100">
+                    <h4 class="text-[10px] font-semibold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-1.5">
+                        <i class="fa-solid fa-wand-magic-sparkles text-slate-300"></i> También te puede interesar
+                    </h4>
+                    <div id="similar-recipes-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
             </div>
 
             <!-- Modal Footer -->
@@ -773,10 +783,21 @@
             document.body.style.overflow = 'auto';
         }
 
+        // Normaliza texto para búsquedas: minúsculas y sin tildes/acentos (p. ej. "plátano" === "platano")
+        function normalizeText(str) {
+            return (str || '')
+                .toString()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .toLowerCase();
+        }
+
         function renderRecipes() {
             const grid = document.getElementById('recipe-grid');
             const emptyState = document.getElementById('empty-state');
             grid.innerHTML = '';
+
+            const normalizedQuery = normalizeText(searchQuery);
 
             const filtered = recipes.filter(r => {
                 const matchesCategory = activeCategory === 'all' || r.category === activeCategory;
@@ -785,8 +806,8 @@
                     : activeTag === '__FAVORITES__'
                         ? userFavorites.has(r.id)
                         : (r.tags && r.tags.includes(activeTag));
-                const matchesSearch = r.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                                      r.ingredients.some(i => i.name.toLowerCase().includes(searchQuery.toLowerCase()));
+                const matchesSearch = normalizeText(r.title).includes(normalizedQuery) ||
+                                      r.ingredients.some(i => normalizeText(i.name).includes(normalizedQuery));
 
                 return matchesCategory && matchesTag && matchesSearch;
             });
@@ -946,6 +967,103 @@
             renderRecipes();
         }
 
+        // ==========================================
+        // RECOMENDACIONES DE RECETAS SIMILARES
+        // ==========================================
+
+        // Etiquetas que representan el "grupo/familia principal" de una receta
+        // (coinciden con los filtros rápidos por tipo: Legumbres, Carnes, Pescados...)
+        const FOOD_GROUP_TAGS = ['Legumbres', 'Carnes', 'Pescados', 'Huevos', 'Arroces y Pastas', 'Especiales', 'Verduras y Acompañamientos'];
+
+        // Bloques culinarios: una receta solo puede recomendar (o ser recomendada) dentro de su mismo bloque,
+        // para no mezclar platos principales con desayunos/meriendas/dulces y evitar incoherencias (ej. ensalada salada + gachas dulces)
+        const CULINARY_BLOCKS = {
+            'Comida/Cena': 'principal',
+            'Colaciones': 'colacion_dulce',
+            'Dulces saludables': 'colacion_dulce'
+        };
+
+        // Devuelve el bloque culinario de una receta según su categoría
+        function getCulinaryBlock(recipe) {
+            return CULINARY_BLOCKS[recipe.category] || recipe.category;
+        }
+
+        // Devuelve la etiqueta principal/familia de una receta (ignorando la marca interna LoteBatch)
+        function getMainGroupTag(recipe) {
+            if (!recipe.tags || recipe.tags.length === 0) return null;
+            const match = recipe.tags.find(t => FOOD_GROUP_TAGS.includes(t));
+            if (match) return match;
+            return recipe.tags.find(t => t !== 'LoteBatch') || null;
+        }
+
+        // Comprueba si dos recetas tienen un perfil nutricional similar dentro del margen permitido
+        function withinMacroMargin(a, b) {
+            return Math.abs((a.kcal || 0) - (b.kcal || 0)) <= 80 &&
+                   Math.abs((a.protein || 0) - (b.protein || 0)) <= 8 &&
+                   Math.abs((a.carbs || 0) - (b.carbs || 0)) <= 8 &&
+                   Math.abs((a.fat || 0) - (b.fat || 0)) <= 5;
+        }
+
+        // De una lista de candidatas, elige la más cercana en kcal a la receta de referencia
+        function closestByKcal(reference, candidates) {
+            if (candidates.length === 0) return null;
+            return candidates.reduce((closest, r) =>
+                Math.abs(r.kcal - reference.kcal) < Math.abs(closest.kcal - reference.kcal) ? r : closest
+            , candidates[0]);
+        }
+
+        // Calcula las 2 recomendaciones: 1) misma familia + macros similares, 2) familia distinta + macros similares
+        function getSimilarRecipes(recipe) {
+            const mainGroup = getMainGroupTag(recipe);
+            const sameBlock = getCulinaryBlock(recipe);
+            // Solo se consideran candidatas recetas del mismo bloque culinario (principal, o colación/dulce)
+            const others = recipes.filter(r => r.id !== recipe.id && getCulinaryBlock(r) === sameBlock);
+
+            // Recomendación 1: obligatoriamente la misma familia/etiqueta principal
+            let rec1 = null;
+            if (mainGroup) {
+                const sameFamily = others.filter(r => getMainGroupTag(r) === mainGroup);
+                const withinMargin = sameFamily.filter(r => withinMacroMargin(recipe, r));
+                rec1 = closestByKcal(recipe, withinMargin.length > 0 ? withinMargin : sameFamily);
+            }
+
+            // Recomendación 2: obligatoriamente una familia/etiqueta distinta a la actual
+            const differentFamily = others.filter(r => {
+                if (rec1 && r.id === rec1.id) return false; // evitar repetir la misma sugerencia
+                const group = getMainGroupTag(r);
+                return mainGroup ? group !== mainGroup : true;
+            });
+            const withinMargin2 = differentFamily.filter(r => withinMacroMargin(recipe, r));
+            const rec2 = closestByKcal(recipe, withinMargin2.length > 0 ? withinMargin2 : differentFamily);
+
+            return [rec1, rec2].filter(Boolean);
+        }
+
+        // Pinta las tarjetas de recomendaciones dentro del modal de ficha
+        function renderSimilarRecipes(recipe) {
+            const section = document.getElementById('similar-recipes-section');
+            const grid = document.getElementById('similar-recipes-grid');
+            const similar = getSimilarRecipes(recipe);
+
+            if (similar.length === 0) {
+                section.classList.add('hidden');
+                grid.innerHTML = '';
+                return;
+            }
+
+            grid.innerHTML = similar.map(r => `
+                <button onclick="openModal(${r.id})" class="flex items-center gap-3 bg-slate-50 hover:bg-brand-light/50 border border-slate-100 hover:border-brand-secondary/50 rounded-2xl p-2.5 text-left transition-all group">
+                    <img src="${r.image}" alt="${r.title}" class="w-14 h-14 rounded-xl object-cover flex-shrink-0 shadow-sm" onerror="this.src='https://placehold.co/100x100/90a69a/ffffff?text=Receta'">
+                    <div class="min-w-0">
+                        <p class="text-xs font-bold text-slate-800 group-hover:text-brand-dark leading-snug line-clamp-2">${r.title}</p>
+                        <p class="text-[10px] text-slate-400 mt-0.5">${r.kcal} kcal · ${r.category}</p>
+                    </div>
+                </button>
+            `).join('');
+
+            section.classList.remove('hidden');
+        }
+
         function openModal(id) {
             const recipe = recipes.find(r => r.id === id);
             if (!recipe) return;
@@ -1002,9 +1120,14 @@
 
             renderModalDetails();
             updateModalFavoriteIcon();
+            renderSimilarRecipes(recipe);
 
             document.getElementById('recipe-modal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
+
+            // Si veníamos de otra ficha (al clicar una recomendación), volvemos a subir el scroll del modal
+            const modalBody = document.querySelector('#recipe-modal .overflow-y-auto');
+            if (modalBody) modalBody.scrollTop = 0;
         }
 
         function closeModal() {
@@ -1050,6 +1173,9 @@
             });
         }
     </script>
+                        
+</body>
+</html>
                         
 </body>
 </html>
